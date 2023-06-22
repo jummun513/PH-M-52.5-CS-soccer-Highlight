@@ -1,6 +1,6 @@
 import React from 'react';
 import './Highlight.css';
-import playButton from '../../../../media/playbutton.png';
+import playButton from '../../../media/playbutton.png';
 
 const Highlight = (props) => {
     const { competition, date, thumbnail, title } = props.data;

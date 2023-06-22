@@ -1,23 +1,24 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from "../../media/logo.png"
-import backVideo from "../../media/banner.mp4"
-import './HeaderSection.css'
+import React from 'react';
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import logo from "../../../../media/logo.png";
+import { useState } from 'react';
+import './Navbar.css';
+import { NavLink } from 'react-router-dom';
+
 
 const navigation = [
-    { name: 'Home', href: '#' },
-    { name: 'Highlights', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Highlights', href: '/highlights' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
 ]
 
-export default function Example() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+const Navbar = ({ bgColor }) => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <div className="bg-black">
-            <video className='bannerVideo' src={backVideo} autoPlay loop muted />
+        <div>
             <nav className="nav-bar absolute z-20 top-0 w-full flex items-center justify-between px-6 py-6 pt-3 lg:px-8 lg:py-0 text-white" aria-label="Global">
                 <div className="nav-image flex lg:flex-1">
                     <a href="#hm" className="flex items-center cursor-pointer">
@@ -39,11 +40,11 @@ export default function Example() {
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
-                <div className="hidden lg:flex lg:gap-x-12">
+                <div id="sidebar" className="hidden lg:flex lg:gap-x-12">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="nav-text relative text-sm font-semibold leading-6">
+                        <NavLink key={item.name} to={item.href} className="nav-text relative text-sm font-semibold leading-6">
                             {item.name}
-                        </a>
+                        </NavLink>
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -98,27 +99,8 @@ export default function Example() {
                     </div>
                 </Dialog.Panel>
             </Dialog>
-            <div className="banner-text z-10 max-w-2xl text-white">
-                <div className="text-center">
-                    <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        Award winning football highlight website
-                    </h1>
-                    <p className="mt-6 text-lg leading-8 text-slate-100">
-                        Latest Highlights Football and Goals from major leagues of high Quality with a single click ,Huge community of football fans from around the world.
-                    </p>
-                    <div className="mt-10 flex items-center justify-center gap-x-6">
-                        <a
-                            href="#"
-                            className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                        >
-                            Let's Start
-                        </a>
-                        <a href="#" className="text-sm font-semibold leading-6 text-white">
-                            About Us <span aria-hidden="true">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
-    )
-}
+    );
+};
+
+export default Navbar;
