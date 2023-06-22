@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import logo from "../../logo.png"
-import backVideo from "../../banner.mp4"
+import logo from "../../media/logo.png"
+import backVideo from "../../media/banner.mp4"
 import './HeaderSection.css'
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Home', href: '#' },
+    { name: 'Highlights', href: '#' },
+    { name: 'About', href: '#' },
+    { name: 'Contact', href: '#' },
 ]
 
 export default function Example() {
@@ -101,21 +101,20 @@ export default function Example() {
             <div className="banner-text z-10 max-w-2xl text-white">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        Data to enrich your online business
+                        Award winning football highlight website
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-slate-100">
-                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                        fugiat veniam occaecat fugiat aliqua.
+                        Latest Highlights Football and Goals from major leagues of high Quality with a single click ,Huge community of football fans from around the world.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                         <a
                             href="#"
                             className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-slate-100 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
-                            Get started
+                            Let's Start
                         </a>
                         <a href="#" className="text-sm font-semibold leading-6 text-white">
-                            Learn more <span aria-hidden="true">→</span>
+                            About Us <span aria-hidden="true">→</span>
                         </a>
                     </div>
                 </div>
