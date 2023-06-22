@@ -3,7 +3,6 @@ import './Highlight.css';
 import playButton from '../../../../media/playbutton.png';
 
 const Highlight = (props) => {
-    console.log(props);
     const { competition, date, thumbnail, title } = props.data;
     let play = title.slice(0, 27);
     let host = competition.split(':');
