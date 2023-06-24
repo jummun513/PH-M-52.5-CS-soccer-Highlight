@@ -14,12 +14,13 @@ const navigation = [
     { name: 'Contact', href: '/contact' },
 ]
 
+
 const Navbar = ({ bgColor }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
         <div>
-            <nav className="nav-bar absolute z-20 top-0 w-full flex items-center justify-between px-6 py-6 pt-3 lg:px-8 lg:py-0 text-white" aria-label="Global">
+            <nav className="nav-bar absolute z-20 top-0 w-full flex items-center justify-between px-6 py-6 pt-3 lg:px-8 lg:py-0 md:text-white" aria-label="Global">
                 <div className="nav-image flex lg:flex-1">
                     <a href="#hm" className="flex items-center cursor-pointer">
                         <img
@@ -33,11 +34,11 @@ const Navbar = ({ bgColor }) => {
                 <div className="flex lg:hidden">
                     <button
                         type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 md:text-white"
                         onClick={() => setMobileMenuOpen(true)}
                     >
                         <span className="sr-only">Open main menu</span>
-                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                        <Bars3Icon style={bgColor} className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
                 <div id="sidebar" className="hidden lg:flex lg:gap-x-12">
