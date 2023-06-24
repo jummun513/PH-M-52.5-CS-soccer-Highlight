@@ -7,6 +7,7 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import NotFound from './Components/NotFound/NotFound';
 import axios from 'axios';
+import FullVideo from './Components/FullVideo/FullVideo'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home highlights={data} loading={loading}></Home>}></Route>
         <Route path='/highlights' element={<Highlights highlights={currentCard} cardPerPage={cardPerPage} setCurrentPage={setCurrentPage} totalCard={data.response} loading={loading}></Highlights>}></Route>
+        <Route path='/watch_highlight/:something' element={<FullVideo highlights={data} loading={loading}></FullVideo>}></Route>
         <Route path='/about' element={<About loading={loading}></About>}></Route>
         <Route path='/contact' element={<Contact loading={loading}></Contact>}></Route>
         <Route path='*' element={<NotFound loading={loading}></NotFound>}></Route>

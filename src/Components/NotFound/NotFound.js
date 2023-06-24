@@ -15,7 +15,7 @@ const NotFound = ({ loading }) => {
                 <h5 className='text-xl md:text-4xl text-gray-400 mb-10'>Sorry! Page Not Found - 404.</h5>
 
                 <Link to='/'>
-                    <button className='bg-blue-500 text-white p-1 text-sm md:p-3 md:font-medium'>
+                    <button className='bg-blue-500 text-white p-2 rounded text-sm md:text-base md:font-medium'>
                         Back to Home
                     </button>
                 </Link>
