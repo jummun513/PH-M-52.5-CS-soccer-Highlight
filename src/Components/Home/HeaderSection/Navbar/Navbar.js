@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import logo from "../../../../media/logo.png";
 import { useState } from 'react';
 import './Navbar.css';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const navigation = [
@@ -22,14 +22,14 @@ const Navbar = ({ bgColor }) => {
         <div>
             <nav className="nav-bar absolute z-20 top-0 w-full flex items-center justify-between px-6 py-6 pt-3 lg:px-8 lg:py-0 md:text-white" aria-label="Global">
                 <div className="nav-image flex lg:flex-1">
-                    <a href="#hm" className="flex items-center cursor-pointer">
+                    <Link to={'/'} className="flex items-center cursor-pointer">
                         <img
                             className="h-auto w-20"
                             src={logo}
                             alt=""
                         />
-                        <span className="lg:not-sr-only sr-only ms-2 font-bold">Scorer Highlight</span>
-                    </a>
+                        <span className="lg:not-sr-only sr-only ms-2 font-bold">Scorer Highlights</span>
+                    </Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -58,14 +58,14 @@ const Navbar = ({ bgColor }) => {
                 <div className="fixed inset-0 z-50" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white pt-3 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <Link to={'/'} className="-m-1.5 p-1.5">
                             <img
                                 className="h-auto w-20"
                                 src={logo}
                                 alt=""
                             />
-                        </a>
-                        <span className="not-sr-only">Soccer Highlight</span>
+                        </Link>
+                        <span className="not-sr-only">Soccer Highlights</span>
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"
