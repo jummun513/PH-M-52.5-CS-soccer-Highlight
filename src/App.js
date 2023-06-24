@@ -13,7 +13,7 @@ function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(12);
+  const [cardPerPage, setCardPerPage] = useState(12);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,12 +30,16 @@ function App() {
     fetchData();
   }, []);
 
+  // Get current post 
+  const indexOfLastCard = currentPage * cardPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardPerPage;
+  const currentCard = data.response?.slice(indexOfFirstCard, indexOfLastCard);
 
   return (
     <div>
       <Routes>
         <Route path='/' element={<Home highlights={data} loading={loading}></Home>}></Route>
-        <Route path='/highlights' element={<Highlights highlights={data} loading={loading}></Highlights>}></Route>
+        <Route path='/highlights' element={<Highlights highlights={currentCard} cardPerPage={cardPerPage} setCurrentPage={setCurrentPage} totalCard={data.response} loading={loading}></Highlights>}></Route>
         <Route path='/about' element={<About loading={loading}></About>}></Route>
         <Route path='/contact' element={<Contact loading={loading}></Contact>}></Route>
         <Route path='*' element={<NotFound loading={loading}></NotFound>}></Route>
