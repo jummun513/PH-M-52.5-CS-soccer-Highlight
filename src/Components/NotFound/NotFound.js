@@ -1,8 +1,14 @@
 import React from 'react';
 import "./NotFound.css";
 import { Link } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
-const NotFound = () => {
+const NotFound = ({ loading }) => {
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <div className='not-found'>

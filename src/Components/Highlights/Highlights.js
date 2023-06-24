@@ -2,11 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Highlight from './Highlight/Highlight';
 import './Highlights.css';
 import Navbar from '../Home/HeaderSection/Navbar/Navbar';
+import FooterSection from '../../Components/Home/FooterSection/FooterSection'
+import Loading from '../Loading/Loading';
 
-const Highlights = ({ highlights }) => {
+const Highlights = ({ highlights, loading }) => {
 
     const bgColor = {
         color: '#000',
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (
@@ -22,6 +28,7 @@ const Highlights = ({ highlights }) => {
                     }
                 </div>
             </div>
+            <FooterSection></FooterSection>
         </div>
     );
 };

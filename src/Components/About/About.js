@@ -1,7 +1,13 @@
 import React from 'react';
 import Navbar from '../Home/HeaderSection/Navbar/Navbar';
+import Loading from '../Loading/Loading';
 
-const About = () => {
+const About = ({ loading }) => {
+
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <Navbar></Navbar>

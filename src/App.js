@@ -6,37 +6,39 @@ import { useEffect, useState } from 'react';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import NotFound from './Components/NotFound/NotFound';
+import axios from 'axios';
 
 function App() {
 
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(12);
+
   useEffect(() => {
-    const url = 'https://www.scorebat.com/video-api/v3/feed/?token=OTEyOTZfMTY4NjM4MDQ3OV9lM2UyOTNiZGM1NmIwYjU1YjM4NTAxZTQ4MDc5YTkzMDk2MWE1ODIz';
-    const options = {
-      method: 'GET',
-      headers: {}
-    };
-    async function main() {
+    const fetchData = async () => {
+      setLoading(true);
       try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        setData(result);
+        const res = await axios.get('https://www.scorebat.com/video-api/v3/feed/?token=OTEyOTZfMTY4NjM4MDQ3OV9lM2UyOTNiZGM1NmIwYjU1YjM4NTAxZTQ4MDc5YTkzMDk2MWE1ODIz');
+        setData(res.data);
       }
       catch (error) {
         console.error(error);
       }
+      setLoading(false);
     }
-    main();
+    fetchData();
   }, []);
+
 
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home highlights={data}></Home>}></Route>
-        <Route path='/highlights' element={<Highlights highlights={data}></Highlights>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
-        <Route path='/contact' element={<Contact></Contact>}></Route>
-        <Route path='*' element={<NotFound></NotFound>}></Route>
+        <Route path='/' element={<Home highlights={data} loading={loading}></Home>}></Route>
+        <Route path='/highlights' element={<Highlights highlights={data} loading={loading}></Highlights>}></Route>
+        <Route path='/about' element={<About loading={loading}></About>}></Route>
+        <Route path='/contact' element={<Contact loading={loading}></Contact>}></Route>
+        <Route path='*' element={<NotFound loading={loading}></NotFound>}></Route>
       </Routes>
     </div>
   );
