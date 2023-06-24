@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1 className='relative top-28 text-5xl'>Do you wants to knock me?</h1>
+            <h1 className='relative top-28 text-5xl'>Contact is under monitoring.</h1>
         </div>
     );
 };

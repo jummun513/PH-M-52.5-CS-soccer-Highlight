@@ -17,7 +17,7 @@ const MainSection = ({ highlights }) => {
                         )
                     }
                 </div>
-                <p className='text-center mb-10'><Link to="/highlights" className="text-2xl hover:underline font-semibold leading-6 text-blue-600">See All <span aria-hidden="true">→</span></Link></p>
+                <p className='text-center mb-10 mt-8 md:mt-0'><Link to="/highlights" className="text-2xl hover:underline font-semibold leading-6 text-blue-600">See All <span aria-hidden="true">→</span></Link></p>
             </div>
         </div>
     );
