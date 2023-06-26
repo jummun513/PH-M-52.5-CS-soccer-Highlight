@@ -7,12 +7,12 @@ import { faFacebook, faLinkedin, faTwitter, faYoutube, fab } from '@fortawesome/
 const FooterSection = () => {
     return (
         <div>
-            <div className='footer md:flex text-center md:text-left justify-between py-8 px-10 lg:mt-24'>
+            <div className='footer py-8 px-10 md:flex md:justify-between md:items-center lg:mt-24'>
                 <div className="text">
                     <p>&copy; All Rights Reserved 2023.</p>
                     <p>Developed By Jummun Islam.</p>
                 </div>
-                <div className="icon mt-4 md:mt-0">
+                <div className="follow">
                     <p>Follow me:</p>
                     <p className='text-2xl'>
                         <FontAwesomeIcon className='me-3 cursor-pointer' icon={faFacebook} />

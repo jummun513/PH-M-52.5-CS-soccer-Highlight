@@ -20,7 +20,7 @@ const Navbar = ({ bgColor }) => {
 
     return (
         <div>
-            <nav className="nav-bar absolute z-20 top-0 w-full flex items-center justify-between px-6 py-6 pt-3 lg:px-8 lg:py-0 md:text-white" aria-label="Global">
+            <nav className="nav-bar absolute z-20 top-0 w-full flex items-center justify-between px-6 lg:px-8 lg:ps-6 md:text-white" aria-label="Global">
                 <div className="nav-image flex lg:flex-1">
                     <Link to={'/'} className="flex items-center cursor-pointer">
                         <img
@@ -56,7 +56,7 @@ const Navbar = ({ bgColor }) => {
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-50" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white pt-3 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <Dialog.Panel className="sm-navbar fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 pb-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <Link to={'/'} className="-m-1.5 p-1.5">
                             <img

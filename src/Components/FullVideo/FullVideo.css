@@ -1,0 +1,78 @@
+.full-video {
+    padding: 50px 50px 20px 50px;
+    width: 100%;
+    margin-top: 100px;
+    height: calc(100vh- 150px);
+}
+
+.full-video .suggested {
+    margin-left: 20px;
+    padding: 10px 0;
+    box-shadow: .1px .1px 1px .5px gray;
+}
+
+.full-video .suggested .text {
+    border-bottom: 3px solid gainsboro;
+}
+
+.suggested .card-container div {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.play-video {
+    position: relative;
+}
+
+.play-video,
+.play-video .image1,
+.play-video .image1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.play-video .image2 {
+    position: absolute;
+    width: 30%;
+    left: 50%;
+    top: 50%;
+    Transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+@media screen and (max-width: 560px) {
+    .full-video {
+        flex-direction: column;
+        padding: 20px 0;
+        height: calc(100vh- 150px);
+    }
+
+    .full-video,
+    .play-video,
+    .suggested {
+        width: 100vw;
+    }
+
+    .suggested {
+        margin: 30px 0px !important;
+        height: 220px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .suggested .text {
+        padding-bottom: 20px !important;
+    }
+
+    .suggested .card-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 20px 0;
+        align-items: center;
+    }
+
+    .suggested .small-card {
+        margin: 10px 5px !important;
+    }
+}

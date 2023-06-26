@@ -8,6 +8,15 @@
     }
 }
 
+@media screen and (max-width: 560px) {
+
+    .nav-bar,
+    .sm-navbar {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+}
+
 .nav-text::after {
     content: '';
     height: 2px;

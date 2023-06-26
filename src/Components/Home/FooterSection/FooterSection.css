@@ -2,3 +2,13 @@
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
 }
+
+@media screen and (max-width: 560px) {
+    .footer {
+        text-align: center;
+    }
+
+    .footer .follow {
+        margin-top: 20px;
+    }
+}

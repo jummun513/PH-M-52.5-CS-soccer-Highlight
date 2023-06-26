@@ -10,7 +10,7 @@ const MainSection = ({ highlights }) => {
         <div>
             <div id='recent-highlight' className='mt-20'>
                 <h1 className='md:text-center font-bold text-3xl lg:text-4xl ps-3 md:ps-0'>Recent Highlights</h1>
-                <div className="card-container grid gap-x-10 gap-y-10 pt-10 px-10 lg:px-14 lg:pt-16 lg:pb-14">
+                <div className="card-container grid lg:gap-x-10 gap-y-10 pt-10 px-4 lg:px-14 lg:pt-16 lg:pb-14">
                     {
                         data?.map((highlight, idx) =>
                             <Highlight key={idx} data={highlight}></Highlight>

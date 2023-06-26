@@ -31,6 +31,10 @@ function App() {
     fetchData();
   }, []);
 
+  data.response?.map(dat => (dat.id = Math.ceil(Math.random() * 100000000000000000000)));
+
+
+
   // Get current post 
   const indexOfLastCard = currentPage * cardPerPage;
   const indexOfFirstCard = indexOfLastCard - cardPerPage;
